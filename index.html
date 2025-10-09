@@ -8,11 +8,27 @@
   <meta name="author" content="University of Miami Student" />
   <meta name="keywords" content="Dwayne Johnson, The Rock, WWE, Wrestling, Actor, Fast and Furious, University of Miami" />
   <!-- rubric: one required HTML comment -->
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <h1>The Life and Career of Dwayne "The Rock" Johnson</h1>
-    <p>
+
+    <!-- Navigation grid linking to page areas -->
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#um">Early Life & UM</a>
+      <a href="#career">Wrestling → Hollywood</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#movies">Movies</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p class="lead">
       Dwayne Douglas Johnson, known professionally as "The Rock," is an American actor, producer, and former professional wrestler born on May 2, 1972.
       A <em>University of Miami</em> alumnus, he is one of the <strong>highest-paid actors</strong> in the world and is known for his
       <em>charismatic personality</em> and <strong>incredible work ethic</strong>. Uses the
@@ -44,7 +60,7 @@
 
     <section id="movies">
       <h3>Popular Movies and Projects</h3>
-      <ul>
+      <ul class="movies-list">
         <li>Fast & Furious franchise</li>
         <li>Jumanji: Welcome to the Jungle</li>
         <li>Moana (voice of Maui)</li>
@@ -57,28 +73,30 @@
 
     <section id="gallery">
       <h3>Gallery</h3>
-      <figure>
-        <img src="images/dwayne1.jpg" alt="Dwayne Johnson portrait" height="150" />
-        <figcaption>Portrait</figcaption>
-      </figure>
-      <figure>
-        <img src="images/dwayne2.jpg" alt="The Rock at University of Miami" height="150" />
-        <figcaption>UM #94</figcaption>
-      </figure>
-      <figure>
-        <img src="images/dwayne3.jpg" alt="The Rock in Hollywood" height="150" />
-        <figcaption>Hollywood</figcaption>
-      </figure>
+      <div class="gallery">
+        <figure>
+          <img src="images/dwayne1.jpg" alt="Dwayne Johnson portrait" />
+          <figcaption class="muted">Portrait</figcaption>
+        </figure>
+        <figure>
+          <img src="images/dwayne2.jpg" alt="The Rock at University of Miami" />
+          <figcaption class="muted">UM #94</figcaption>
+        </figure>
+        <figure>
+          <img src="images/dwayne3.jpg" alt="The Rock in Hollywood" />
+          <figcaption class="muted">Hollywood</figcaption>
+        </figure>
+      </div>
 
       <h4>Video</h4>
-      <iframe
-        width="560" height="315"
-        src="https://www.youtube.com/embed/ykuOE62paHA"
-        title="Dwayne Johnson video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/ykuOE62paHA"
+          title="Dwayne Johnson video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
     </section>
   </main>
 
