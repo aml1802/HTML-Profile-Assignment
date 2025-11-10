@@ -16,36 +16,61 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
-.site-header, main, footer {
+/* Layout containers */
+.site-header,
+main,
+footer {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
 }
-.site-header h1 {
+
+/* Flexbox hero with background image */
+.hero {
+  display: flex;                 /* FLEXBOX USE */
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background-image:
+    linear-gradient(120deg, rgba(15, 26, 40, 0.85), rgba(0, 0, 0, 0.4)),
+    url("images/rock-hero.jpg"); /* put a hero image here */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.hero-content {
   text-align: center;
+}
+
+/* Header title */
+.site-header h1 {
   background: linear-gradient(90deg, var(--brand1), var(--brand2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Navigation grid */
 .site-nav {
-  display: grid;
+  display: grid; /* GRID USE */
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: .5rem;
-  margin: 1rem 0;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1rem;
 }
 .site-nav a {
   display: block;
   text-decoration: none;
   background: var(--dark);
   color: #fff;
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   text-align: center;
   border-radius: 8px;
-  transition: all .25s ease;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
 }
 .site-nav a:hover {
   transform: translateY(-2px);
@@ -53,44 +78,76 @@ body {
 }
 
 /* Headings */
-h2, h3 {
+h2,
+h3 {
   border-bottom: 2px solid #eee;
-  padding-bottom: .25rem;
+  padding-bottom: 0.25rem;
   margin-top: 1.5rem;
 }
 
 /* Paragraphs */
 p { max-width: 75ch; }
 
-/* Classes */
-.lead { font-size: 1.1rem; color: var(--dark); }
+/* Lead text */
+.lead {
+  font-size: 1.05rem;
+  color: #f3f4f6;
+}
 
-/* Movies list */
+/* Movies list in two columns (CSS columns ok) */
 .movies-list {
   columns: 2;
   column-gap: 2rem;
+  padding-left: 1rem;
 }
-@media (max-width: 600px) { .movies-list { columns: 1; } }
+@media (max-width: 600px) {
+  .movies-list {
+    columns: 1;
+  }
+}
 
-/* Gallery */
+/* Multi-column section using CSS Grid */
+.legacy {
+  margin-top: 2rem;
+}
+.legacy-grid {
+  display: grid; /* GRID USE */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.legacy-card {
+  background: #f7f8fa;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.legacy-card h3 {
+  border-bottom: none;
+  margin-top: 0;
+}
+
+/* Gallery: image grid */
 .gallery {
-  display: grid;
+  display: grid; /* GRID USE */
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
-  margin-block: .5rem 1rem;
+  margin-block: 0.5rem 1rem;
 }
 .gallery img {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
-  transition: transform .25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
 }
-.gallery img:hover { transform: scale(1.03); }
+.gallery img:hover {
+  transform: scale(1.03);
+}
 figcaption {
   text-align: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #555;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
 /* Video */
@@ -111,4 +168,6 @@ footer a {
   color: var(--brand1);
   text-decoration: none;
 }
-footer a:hover { text-decoration: underline; }
+footer a:hover {
+  text-decoration: underline;
+}
